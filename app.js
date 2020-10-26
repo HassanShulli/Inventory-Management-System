@@ -33,11 +33,19 @@ app.use(function (req, res, next) {
 });
 
 
-// const apiRoute = '/api/v1/';
-// const scheduleCtrl = require('./controllers/schedule.controller');
-//
-// app.get(apiRoute + 'schedule', scheduleCtrl.read);
-// app.post(apiRoute + 'schedule', scheduleCtrl.create);
+const apiRoute = '/api/v1/';
+const itemCtrl = require('./controllers/item.controller');
+const productCtrl = require('./controllers/product.controller');
+const warehouseCtrl = require('./controllers/warehouse.controller');
+// Item routes
+app.get(apiRoute + 'item', itemCtrl.read);
+app.post(apiRoute + 'item', itemCtrl.create);
+// Product routes
+app.get(apiRoute + 'product', productCtrl.read);
+app.post(apiRoute + 'product', productCtrl.create);
+// Warehouse routes
+app.get(apiRoute + 'warehouse', warehouseCtrl.read);
+app.post(apiRoute + 'warehouse', warehouseCtrl.create);
 
 
 // catch 404
