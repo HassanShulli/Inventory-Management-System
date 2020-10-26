@@ -1,5 +1,6 @@
 
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 module.exports = mongoose.model('Warehouse', new mongoose.Schema({
         name: {

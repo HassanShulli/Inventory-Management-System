@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost:27017/POS_DB");  //for local mongo use
+mongoose.connect("mongodb://localhost:27017/inventory");  //for local mongo use
 mongoose.connection.on('error', function (err) {
     console.error(err);
     process.exit();
@@ -45,9 +45,10 @@ app.get(apiRoute + 'product', productCtrl.read);
 app.post(apiRoute + 'product', productCtrl.create);
 app.delete(apiRoute + 'product/:id', productCtrl.delete);
 // Warehouse routes
-app.get(apiRoute + 'warehouse', warehouseCtrl.read);
+app.get(apiRoute + 'warehouse/:id', warehouseCtrl.readOne);
+app.get(apiRoute + 'warehouses', warehouseCtrl.read);
 app.post(apiRoute + 'warehouse', warehouseCtrl.create);
-app.delete(apiRoute + 'schedule/:id', productCtrl.delete);
+app.delete(apiRoute + 'warehouse/:id', productCtrl.delete);
 
 
 // catch 404
