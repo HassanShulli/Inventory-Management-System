@@ -40,6 +40,8 @@ const warehouseCtrl = require('./controllers/warehouse.controller');
 // Item routes
 app.get(apiRoute + 'item', itemCtrl.read);
 app.post(apiRoute + 'item', itemCtrl.create);
+app.post(apiRoute + 'item/stock', itemCtrl.stock);
+app.post(apiRoute + 'item/unstock', itemCtrl.unstock);
 // Product routes
 app.get(apiRoute + 'product', productCtrl.read);
 app.post(apiRoute + 'product', productCtrl.create);
