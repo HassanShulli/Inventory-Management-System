@@ -43,9 +43,11 @@ app.post(apiRoute + 'item', itemCtrl.create);
 // Product routes
 app.get(apiRoute + 'product', productCtrl.read);
 app.post(apiRoute + 'product', productCtrl.create);
+app.delete(apiRoute + 'product/:id', productCtrl.delete);
 // Warehouse routes
 app.get(apiRoute + 'warehouse', warehouseCtrl.read);
 app.post(apiRoute + 'warehouse', warehouseCtrl.create);
+app.delete(apiRoute + 'schedule/:id', productCtrl.delete);
 
 
 // catch 404
