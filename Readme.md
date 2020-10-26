@@ -1,5 +1,4 @@
-# SMS Scheuling System
-
+# Inventory Management System
 ### Overview:
 This is an implementation of an inventory system.
 
